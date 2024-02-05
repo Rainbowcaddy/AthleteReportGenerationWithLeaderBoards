@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+
+    <!-- Other head elements -->
+    <title>{{ report_title }}</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0mm;
+        }
+        @page :first {
+            size: A4;
+            margin: 0mm;
+        }
+
+        @page extended {
+            size: A4 portrait;
+            /* Set the height you want for the longer page */
+            height: 390mm; /* Adjust as needed */
+            margin: 0mm;
+        }
+        body {
+            font-family: 'Bungee', cursive;
+            margin: 0;
+            padding: 0;
+            background-color: black; /* Global background */
+        }
+        .page {
+            position: relative; /* Needed for absolute positioning of child elements */
+            height: 297mm; /* A4 page height */
+            width: 210mm; /* A4 page width */
+            margin: 0 auto; /* Center the page horizontally */
+            color: white; /* Text color for readability */
+            background-color: black; /* Background color of each page */
+            page-break-after: always; /* Page break after each section */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content horizontally */
+        }
+        .first-page-background {
+            background-image: url('{{ first_page_background_uri }}');
+            background-size: cover; /* Ensure the image covers the whole page */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Prevent image repetition */
+        }
+        .content {
+            width: 80%; /* Adjust content width as needed */
+            text-align: center; /* Center align text */
+            margin-top: 20mm; /* Adjust top margin as needed */
+        }
+        .header {
+            font-size: 24px;
+        }
+        .subheader {
+            font-size: 18px;
+        }
+        .special-section {
+            background-color: #4CAF50; /* Green background */
+            color: white; /* White text */
+            padding: 10px;
+            width: 300px; /* Fixed width of 300px */
+            margin: 20px 0;
+            border-radius: 15px; /* More pronounced rounded corners */
+        }
+        .page-footer-image {
+            position: absolute;
+            bottom: 1%; /* Adjust distance from bottom */
+            right: 1%; /* Adjust distance from right */
+            width: 45mm; /* Adjust image width as needed */
+        }
+
+
+
+        .pclass {
+            padding-top: 15px;
+            position: absolute;
+            top: 0%; /* Adjust distance from bottom */
+            left: 0%;
+            width: 100%;
+
+        }
+
+        .success-class {
+            padding-top: 30px;
+            position: absolute;
+            top: 0%; /* Adjust distance from bottom */
+            left: 0%;
+            width: 100%;
+
+        }
+
+        .page2-class {
+        
+            position: absolute;
+            top: 0%; /* Adjust distance from bottom */
+            left: 0%;
+            width: 100%;
+
+        }
+        .page2_2-class {
+        padding-top: 850px;
+        position: absolute;
+        top: 0%; /* Adjust distance from bottom */
+        left: 0%;
+        width: 100%;
+
+    }
+
+        .page3-class {
+        
+            position: absolute;
+            top: 0%; /* Adjust distance from bottom */
+            left: 0%;
+            width: 100%;
+
+        }
+        .page3_2-class {
+        padding-top: 700px;
+        position: absolute;
+        top: 0%; /* Adjust distance from bottom */
+        left: 0%;
+        width: 100%;
+
+    }
+
+    .page4-class {
+        
+        position: absolute;
+        top: 0%; /* Adjust distance from bottom */
+        left: 0%;
+        width: 100%;
+
+    }
+
+    .page4_2-class {
+        padding-top: 800px;
+        position: absolute;
+        top: 0%; /* Adjust distance from bottom */
+        left: 0%;
+        width: 100%;
+
+    }
+
+    .page5-class {
+        
+        position: absolute;
+        top: 0%; /* Adjust distance from bottom */
+        left: 0%;
+        width: 100%;
+
+    }
+
+    .page5_2-class {
+        padding-top: 600px;
+        position: absolute;
+        top: 0%; /* Adjust distance from bottom */
+        left: 0%;
+        width: 100%;
+
+    }     
+    
+    .page5_3-class {
+        padding-top: 775px;
+        position: absolute;
+        top: 0%; /* Adjust distance from bottom */
+        left: 0%;
+        width: 100%;
+
+    }   
+
+    .page6-class {
+        
+        position: absolute;
+        top: 0%; /* Adjust distance from bottom */
+        left: 0%;
+        width: 100%;
+
+    }
+
+    .page6_2-class {
+        padding-top: 700px;
+        position: absolute;
+        top: 0%; /* Adjust distance from bottom */
+        left: 0%;
+        width: 100%;
+
+    }  
+
+    .page7-class {
+        
+        position: absolute;
+        top: 0%; /* Adjust distance from bottom */
+        left: 0%;
+        width: 100%;
+
+    }
+
+    .page7_2-class {
+        padding-top: 700px;
+        position: absolute;
+        top: 0%; /* Adjust distance from bottom */
+        left: 0%;
+        width: 100%;
+
+    }  
+
+        .large-text {
+            font-size: 45px; /* Adjust this value as needed */
+            color: white; /* Change the color if needed */
+            text-align: center;
+            margin-top: 50px; /* Adjust the margin as needed */
+        }
+
+        .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7); /* Black with 50% opacity */
+        z-index: 1; /* Ensure it's above the background image */
+    }
+
+    .steps-container {
+        position: relative;
+        z-index: 2;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 40px; /* Increased padding to ensure text doesn't touch the edges */
+        color: white;
+        font-size: 38px; /* Adjust as needed */
+        margin: 0; /* Adjusted to remove the top margin */
+        text-align: left; /* Align text to the left */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 150px;
+    }
+
+    .step {
+    
+    display: flex;
+    align-items: center; /* This ensures vertical centering */
+    margin-bottom: 50px; /* Increase the space between steps as needed */
+}
+
+.step-circle {
+    width: 80px; /* Circle size */
+    height: 80px; /* Circle size */
+    background-color: orange;
+    color: black;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 80px; /* Adjusted to match the height for vertical centering */
+    margin-right: 20px; /* Space between circle and text */
+    font-size: 32px; /* Adjust font size as necessary */
+    flex-shrink: 0; /* Prevent the circle from shrinking */
+}
+
+.step-text {
+    font-size: 40px; /* Larger font size for step title */
+    padding-left: 20px; /* Space between number and text */
+    text-align: left; /* Align text to the left */
+    flex-grow: 1;
+    margin: 0; /* Remove default margins */
+}
+
+.step-body-text {
+    font-size: 30px; /* Smaller font size for body text */
+    text-align: left; /* Align text to the left */
+    
+    padding-left: 100px;
+/* Space between title and body text */
+    line-height: 1.4; /* Adjust line height for readability */
+}
+
+.steps-container:before {
+    content: '';
+    position: absolute;
+    top: 50px; /* Adjust to align with the top of the first circle */
+    bottom: 50px; /* Adjust if needed */
+    left: 40px; /* Align with the horizontal center of circles */
+    border-left: 2px dashed orange; /* The vertical line */
+    z-index: 1;
+}
+
+.extended-page {
+    page: extended;
+}
+
+.age-text-box {
+    border-radius: 10px; /* Rounded corners */
+    color: white; /* White text */
+    padding: 10px;
+    position: absolute; /* Adjust as needed */
+    width: 35%; /* Width of the box */
+    height: 1.75%; /* Height of the box */
+    top: 19.75%; /* Position from the top */
+    left: 15%; /* Position from the left */
+    display: flex;
+    font-size: 25px; /* Increased font size */
+    text-align: center;
+    padding-top: 45px; /* Adjust top padding */
+}
+
+.weight-text-box {
+    border-radius: 10px; /* Rounded corners */
+    color: white; /* White text */
+    padding: 10px;
+    position: absolute; /* Adjust as needed */
+    width: 30%; /* Width of the box */
+    height: 1.75%; /* Height of the box */
+    top: 19.75%; /* Position from the top */
+    left: 37.25%; /* Position from the left */
+    display: flex;
+    font-size: 25px; /* Increased font size */
+    text-align: center;
+    padding-top: 45px; /* Adjust top padding */
+}
+
+.standing-height-text-box {
+    border-radius: 10px; /* Rounded corners */
+    color: white; /* White text */
+    padding: 10px;
+    position: absolute; /* Adjust as needed */
+    width: 30%; /* Width of the box */
+    height: 1.75%; /* Height of the box */
+    top: 19.75%;/* Position from the top */
+    left: 59.5%; /* Position from the left */
+    display: flex;
+    font-size: 25px; /* Increased font size */
+    text-align: center;
+    padding-top: 45px; /* Adjust top padding */
+}
+
+.sitting-height-text-box {
+    border-radius: 10px; /* Rounded corners */
+    color: white; /* White text */
+    padding: 10px;
+    position: absolute; /* Adjust as needed */
+    width: 30%; /* Width of the box */
+    height: 1.75%; /* Height of the box */
+    top: 19.75%; /* Position from the top */
+    left: 81.75%; /* Position from the left */
+    display: flex;
+    font-size: 25px; /* Increased font size */
+    text-align: center;
+    padding-top: 45px; /* Adjust top padding */
+}
+.maturation-color-box {
+    border-radius: 10px; /* Rounded corners */
+    color: white; /* White text */
+    padding: 10px;
+    position: absolute; /* Adjust as needed */
+    width: 36%; /* Width of the box */
+    height: 1.75%; /* Height of the box */
+    top: 81%; /* Position from the top */
+    left: 31%; /* Position from the left */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    font-size: 90px; /* Increased font size */
+    text-align: center;
+    padding-top: 45px;
+     /* Center text alignment */
+}
+
+.maturation-text-box {
+    border-radius: 10px; /* Rounded corners */
+    color: black; /* White text */
+    padding: 10px;
+    position: absolute; /* Adjust as needed */
+    width: 70%; /* Width of the box */
+    height: 1.75%; /* Height of the box */
+    top: 86%; /* Position from the top */
+    left: 16%; /* Position from the left */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    font-size: 38px; /* Increased font size */
+    text-align: center;
+    padding-top: 45px; /* Adjust top padding */
+}
+.flight-time-text-box {
+    border-radius: 10px; /* Rounded corners */
+    color: black; /* White text */
+    padding: 10px;
+    position: absolute; /* Adjust as needed */
+    width: 30%; /* Width of the box */
+    height: 1.75%; /* Height of the box */
+    top: 53.625%;/* Position from the top */
+    left: 24.15%; /* Position from the left */
+    display: flex;
+    font-size: 25px; /* Increased font size */
+    text-align: center;
+    padding-top: 45px; /* Adjust top padding */
+}
+
+.contact-time-text-box {
+    border-radius: 10px; /* Rounded corners */
+    color: black; /* White text */
+    padding: 10px;
+    position: absolute; /* Adjust as needed */
+    width: 30%; /* Width of the box */
+    height: 1.75%; /* Height of the box */
+    top: 53.5%;/* Position from the top */
+    left: 62.5%; /* Position from the left */
+    display: flex;
+    font-size: 25px; /* Increased font size */
+    text-align: center;
+    padding-top: 45px; /* Adjust top padding */
+}
+.reactive-power-color-box {
+    border-radius: 10px; /* Rounded corners */
+    color: white; /* White text */
+    padding: 10px;
+    position: absolute; /* Adjust as needed */
+    width: 34%; /* Width of the box */
+    height: 1.45%; /* Height of the box */
+    top: 87%; /* Position from the top */
+    left: 31%; /* Position from the left */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    font-size: 60px; /* Increased font size */
+    text-align: center;
+    padding-top: 45px;
+     /* Center text alignment */
+}
+.reactive-power-text-box{
+    border-radius: 10px; /* Rounded corners */
+    color: white; /* White text */
+    padding: 10px;
+    position: absolute; /* Adjust as needed */
+    width: 60%; /* Width of the box */
+    height: 1.75%; /* Height of the box */
+    top: 91.5%; /* Position from the top */
+    left: 18%; /* Position from the left */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    font-size: 38px; /* Increased font size */
+    text-align: center;
+    padding-top: 45px; /* Adjust top padding */
+}
+
+.squat-jump-height-text-box {
+    border-radius: 10px; /* Rounded corners */
+    color: black; /* White text */
+    padding: 10px;
+    position: absolute; /* Adjust as needed */
+    width: 30%; /* Width of the box */
+    height: 1.75%; /* Height of the box */
+    top: 52.75%;/* Position from the top */
+    left: 25%; /* Position from the left */
+    display: flex;
+    font-size: 25px; /* Increased font size */
+    text-align: center;
+    padding-top: 45px; /* Adjust top padding */
+}
+
+.counter-movement-jump-height-text-box {
+    border-radius: 10px; /* Rounded corners */
+    color: black; /* White text */
+    padding: 10px;
+    position: absolute; /* Adjust as needed */
+    width: 30%; /* Width of the box */
+    height: 1.75%; /* Height of the box */
+    top: 52.75%;/* Position from the top */
+    left: 67%; /* Position from the left */
+    display: flex;
+    font-size: 25px; /* Increased font size */
+    text-align: center;
+    padding-top: 45px; /* Adjust top padding */
+}
+.eccentric-utilisation-ratio-color-box {
+    border-radius: 10px; /* Rounded corners */
+    color: white; /* White text */
+    padding: 10px;
+    position: absolute; /* Adjust as needed */
+    width: 35.5%; /* Width of the box */
+    height: 1.45%; /* Height of the box */
+    top: 86%; /* Position from the top */
+    left: 31%; /* Position from the left */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    font-size: 60px; /* Increased font size */
+    text-align: center;
+    padding-top: 45px;
+     /* Center text alignment */
+}
+
+.eccentric-utilisation-ratio-text-box{
+    border-radius: 10px; /* Rounded corners */
+    color: white; /* White text */
+    padding: 10px;
+    position: absolute; /* Adjust as needed */
+    width: 60%; /* Width of the box */
+    height: 1.75%; /* Height of the box */
+    top: 91.5%; /* Position from the top */
+    left: 18%; /* Position from the left */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    font-size: 38px; /* Increased font size */
+    text-align: center;
+    padding-top: 45px; /* Adjust top padding */
+}
+
+.counter-movement-squat-jump-power-text-box {
+    border-radius: 10px; /* Rounded corners */
+    color: black; /* White text */
+    padding: 10px;
+    position: absolute; /* Adjust as needed */
+    width: 30%; /* Width of the box */
+    height: 1.75%; /* Height of the box */
+    top: 58.2%;/* Position from the top */
+    left: 25%; /* Position from the left */
+    display: flex;
+    font-size: 25px; /* Increased font size */
+    text-align: center;
+    padding-top: 45px; /* Adjust top padding */
+}
+
+.isosquat-peak-force-text-box {
+    border-radius: 10px; /* Rounded corners */
+    color: black; /* White text */
+    padding: 10px;
+    position: absolute; /* Adjust as needed */
+    width: 30%; /* Width of the box */
+    height: 1.75%; /* Height of the box */
+    top: 58.2%;/* Position from the top */
+    left: 64%; /* Position from the left */
+    display: flex;
+    font-size: 25px; /* Increased font size */
+    text-align: center;
+    padding-top: 45px; /* Adjust top padding */
+}
+
+
+.power-ratio-color-box {
+    border-radius: 10px; /* Rounded corners */
+    color: white; /* White text */
+    padding: 10px;
+    position: absolute; /* Adjust as needed */
+    width: 35.5%; /* Width of the box */
+    height: 1.42%; /* Height of the box */
+    top: 91.8%; /* Position from the top */
+    left: 31%; /* Position from the left */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    font-size: 60px; /* Increased font size */
+    text-align: center;
+    padding-top: 45px;
+     /* Center text alignment */
+}
+
+.power-ratio-text-box{
+    border-radius: 10px; /* Rounded corners */
+    color: white; /* White text */
+    padding: 10px;
+    position: absolute; /* Adjust as needed */
+    width: 60%; /* Width of the box */
+    height: 1.75%; /* Height of the box */
+    top: 95.6%; /* Position from the top */
+    left: 18.25%; /* Position from the left */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    font-size: 38px; /* Increased font size */
+    text-align: center;
+    padding-top: 45px; /* Adjust top padding */
+}
+
+.body-mass-pulled-color-box {
+    border-radius: 10px; /* Rounded corners */
+    color: white; /* White text */
+    padding: 10px;
+    position: absolute; /* Adjust as needed */
+    width: 13%; /* Width of the box */
+    height: 12px; /* Height of the box */
+    top: 60.2%;/* Position from the top */
+    left: 23%; /* Position from the left */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    font-size: 20px; /* Increased font size */
+    text-align: center;
+    
+     /* Center text alignment */
+}
+
+.limb-asymmetry-color-box {
+    border-radius: 10px; /* Rounded corners */
+    color: white; /* White text */
+    padding: 10px;
+    position: absolute; /* Adjust as needed */
+    width: 13%; /* Width of the box */
+    height: 12px; /* Height of the box */
+    top: 60.2%;/* Position from the top */
+    left: 62%; /* Position from the left */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    font-size: 20px; /* Increased font size */
+    text-align: center;
+
+     /* Center text alignment */
+}
+
+.body-mass-pulled-text-box {
+    border-radius: 10px; /* Rounded corners */
+    color: black; /* White text */
+    padding: 10px;
+    position: absolute; /* Adjust as needed */
+    width: 30%; /* Width of the box */
+    height: 1.75%; /* Height of the box */
+    top: 58.2%;/* Position from the top */
+    left: 25%; /* Position from the left */
+    display: flex;
+    font-size: 25px; /* Increased font size */
+    text-align: center;
+    padding-top: 45px; /* Adjust top padding */
+}
+
+.limb-asymmetry-text-box {
+    border-radius: 10px; /* Rounded corners */
+    color: black; /* White text */
+    padding: 10px;
+    position: absolute; /* Adjust as needed */
+    width: 30%; /* Width of the box */
+    height: 1.75%; /* Height of the box */
+    top: 58.2%;/* Position from the top */
+    left: 25%; /* Position from the left */
+    display: flex;
+    font-size: 25px; /* Increased font size */
+    text-align: center;
+    padding-top: 45px; /* Adjust top padding */
+}
+
+.yellow {
+    background-color: yellow; /* Yellow background for pre PHV */
+    color: black; /* Text color for better visibility */
+}
+
+.red {
+    background-color: red; /* Red background for circa PHV */
+}
+
+.green {
+    background-color: #40CB1F; /* Green background for post PHV */
+}
+
+/* Dynamic color classes */
+.low-value {
+    background-color: red; /* Red background for low values */
+}
+
+.medium-value {
+    background-color: yellow; /* Yellow background for medium values */
+    color: black; /* Changing text color for better visibility */
+}
+
+.high-value {
+    background-color: green; /* Green background for high values */
+}
+
+
+.triple-hop-plot-image {
+    position: absolute;
+    top: 18.6%; /* Adjust distance from bottom */
+    left: 3.8%; /* Adjust distance from right */
+    width: 91%; /* Adjust image width as needed */
+}
+
+.rsi-plot-image {
+    position: absolute;
+    top: 39%; /* Adjust distance from bottom */
+    left: 3.8%; /* Adjust distance from right */
+    width: 91%; /* Adjust image width as needed */
+}
+
+
+
+.reactive-power-plot-image {
+    position: absolute;
+    top: 60%; /* Adjust distance from bottom */
+    left: 20%; /* Adjust distance from right */
+    width: 60%; /* Adjust image width as needed */
+}
+
+.sjh-and-cjh-plot-image {
+    position: absolute;
+    top: 24.75%; /* Adjust distance from bottom */
+    left: 3%; /* Adjust distance from right */
+    width: 93.75%;
+    height: 16.25%  /* Adjust image width as needed */
+}
+
+.eur-plot-image {
+    position: absolute;
+    top: 58.5%; /* Adjust distance from bottom */
+    left: 20%; /* Adjust distance from right */
+    width: 60%; /* Adjust image width as needed */
+}
+
+.ispf-plot-image {
+    position: absolute;
+    top: 20%; /* Adjust distance from bottom */
+    left: 3.8%; /* Adjust distance from right */
+    width: 91%; /* Adjust image width as needed */
+    height: 12%;
+}
+
+.isrpf-plot-image {
+    position: absolute;
+    top: 34.8%; /* Adjust distance from bottom */
+    left: 3.8%; /* Adjust distance from right */
+    width: 91%; /* Adjust image width as needed */
+    height: 12%;/* Adjust image width as needed */
+}
+
+.power-plot-image {
+    position: absolute;
+    top: 64%; /* Adjust distance from bottom */
+    left: 15%; /* Adjust distance from right */
+    width: 70%; /* Adjust image width as needed */
+}
+
+.nbpf-plot-image {
+    position: absolute;
+    top: 20%; /* Adjust distance from bottom */
+    left: 3.8%; /* Adjust distance from right */
+    width: 91%; /* Adjust image width as needed */
+    height: 12%;
+}
+
+.nbrpf-plot-image {     
+
+    position: absolute;
+    top: 34.8%; /* Adjust distance from bottom */
+    left: 3.8%; /* Adjust distance from right */
+    width: 91%; /* Adjust image width as needed */
+    height: 12%;
+}
+
+
+.asymmetry-plot-image {
+    position: absolute;
+    top: 64%; /* Adjust distance from bottom */
+    left: 10%; /* Adjust distance from right */
+    width: 80%; /* Adjust image width as needed */
+}
+
+
+.step-one-class {
+
+    border-radius: 10px; /* Rounded corners */
+    color: white; /* White text */
+    padding: 10px;
+    position: absolute; /* Adjust as needed */
+    width: 67%; /* Width of the box */
+    height: 1.75%; /* Height of the box */
+    top: 16%;/* Position from the top */
+    left: 22.5%; /* Position from the left */
+    display: flex;
+    font-size: 32px; /* Increased font size */
+    text-align: center;
+    padding-top: 45px; /* Adjust top padding */
+
+ 
+}
+
+.step-two-class {
+
+    border-radius: 10px; /* Rounded corners */
+    color: white; /* White text */
+    padding: 10px;
+    position: absolute; /* Adjust as needed */
+    width: 67%; /* Width of the box */
+    height: 1.75%; /* Height of the box */
+    top: 40%;/* Position from the top */
+    left: 22.5%; /* Position from the left */
+    display: flex;
+    font-size: 32px; /* Increased font size */
+    text-align: center;
+    padding-top: 45px; /* Adjust top padding */
+
+    
+}
+
+.step-three-class {
+
+    border-radius: 10px; /* Rounded corners */
+    color: white; /* White text */
+    padding: 10px;
+    position: absolute; /* Adjust as needed */
+    width: 67%; /* Width of the box */
+    height: 1.75%; /* Height of the box */
+    top: 62.2%;/* Position from the top */
+    left: 22.5%; /* Position from the left */
+    display: flex;
+    font-size: 32px; /* Increased font size */
+    text-align: center;
+    padding-top: 45px; /* Adjust top padding */
+    
+    
+}
+    
+
+    </style>
+</head>
+<body>
+    <!-- First page with a background image -->
+    <div class="page first-page-background">
+        <div class="content report-header">
+            <div class="overlay">
+            <div class="large-text">
+                <br><br><br>
+                <h1>EMERGING ATHLETE DEVELOPMENT PLAN</h1>
+                <h2>{{ name }}</h2> <!-- Inserted via Jinja2 -->
+                <h2>{{sex}} {{ age }}</h2>  <!-- Inserted via Jinja2 -->
+                <h2>{{ date }}</h2> <!-- Inserted via Jinja2 -->
+                <img src="{{ data_uri }}" class="pclass" alt="Footer Image">
+                   
+
+            
+            <img src="{{ data_uri }}" class="page-footer-image" alt="Footer Image">
+            </div>
+        </div>
+                
+        </div>
+                
+    </div>
+
+    <div class="page extended-page">
+        <div class="content report-header">
+            <img src="{{ page_two_uri }}" class="page2-class" alt="Footer Image">
+            <img src="{{ page_two_two_uri }}" class="page2_2-class" alt="Footer Image">
+            <img src="{{ data_uri }}" class="page-footer-image" alt="Footer Image">
+
+
+            <div id="trainingStatus" class="step-one-class">
+                {{ step_one }}
+            </div>
+
+            <div id="trainingStatus" class="step-two-class">
+                {{ step_two }}
+            </div>
+
+            <div id="trainingStatus" class="step-three-class">
+                {{ step_three }}
+            </div>
+        
+            
+        </div>
+            
+    </div>
+
+    {% if age <= 16 %}
+
+    <div class="page extended-page">
+        <div class="content report-header">
+            <img src="{{ page_three_uri }}" class="page3-class" alt="Footer Image">
+            <img src="{{ page_three_two_uri }}" class="page3_2-class" alt="Footer Image">
+            <img src="{{ data_uri }}" class="page-footer-image" alt="Footer Image">
+
+
+            <div id="trainingStatus" class="age-text-box">
+                {{ age }}
+            </div>
+
+            <div id="trainingStatus" class="weight-text-box">
+                {{ weight }}
+            </div>
+
+            <div id="trainingStatus" class="standing-height-text-box">
+                {{ standing_height }}
+            </div>
+
+            <div id="trainingStatus" class="sitting-height-text-box">
+                {{ sitting_height }}
+            </div>
+
+
+            <div id="maturationBox" class="maturation-color-box {{ maturation_class }}">
+                <span id="maturationValue">{{ maturation_value }}</span>
+            </div>
+
+            <div id="trainingStatus" class="maturation-text-box">
+                {{ maturation_text }}
+            </div>
+
+
+            
+            </div>
+            
+    </div>
+    {% endif %}
+    {% if flight_time != 1 and contact_time != 1 %}
+    <div class="page extended-page">
+        <div class="content report-header">
+            <img src="{{ page_four_uri }}" class="page4-class" alt="Footer Image">
+            <img src="{{ page_four_two_uri }}" class="page4_2-class" alt="Footer Image">
+            <img src="{{ data_uri }}" class="page-footer-image" alt="Footer Image">
+            <img src="{{ triple_hop_plot_path_uri }}" class="triple-hop-plot-image" alt="triple-hop-plot-image">
+            <img src="{{ rsi_plot_path_uri }}" class="rsi-plot-image" alt="rsi-plot-image">
+
+            <div id="trainingStatus" class="flight-time-text-box">
+                {{ flight_time }}
+            </div>
+
+            <div id="trainingStatus" class="contact-time-text-box">
+                {{ contact_time }}
+            </div>
+
+            <div id="maturationBox" class="reactive-power-color-box {{ reactive_power_class }}">
+                <span id="maturationValue">{{ reactive_power_ratio }}</span>
+            </div>
+
+            <div id="trainingStatus" class="reactive-power-text-box">
+                {{ reactive_power_text }}
+            </div>
+
+            
+            <img src="{{ reactice_power_plot_uri }}" class="reactive-power-plot-image" alt="reactive-power-plot-image">
+
+            </div>
+            
+    </div>
+    {% endif %}
+    {% if squat_jump_height != 1 and counter_movement_jump_height != 1 %}
+    <div class="page extended-page">
+        <div class="content report-header">
+            <img src="{{ page_five_uri }}" class="page5-class" alt="Footer Image">
+            <img src="{{ page_five_two_uri }}" class="page5_2-class" alt="Footer Image">
+            <img src="{{ page_five_three_uri }}" class="page5_3-class" alt="Footer Image">
+            <img src="{{ data_uri }}" class="page-footer-image" alt="Footer Image">
+            <img src="{{ sjh_and_cjh_plot_uri }}" class="sjh-and-cjh-plot-image" alt="sjh-and-cjh-plot-image">
+            <img src="{{ eur_plot_uri }}" class="eur-plot-image" alt="eur-plot-image">
+
+            <div id="trainingStatus" class="squat-jump-height-text-box">
+                {{ squat_jump_height }}
+            </div>
+
+            <div id="trainingStatus" class="counter-movement-jump-height-text-box">
+                {{ counter_movement_jump_height }}
+            </div>
+
+            <div id="maturationBox" class="eccentric-utilisation-ratio-color-box {{ eccentric_utilisation_ratio_class }}">
+                <span id="maturationValue">{{ eccentric_utilisation_ratio }}</span>
+            </div>
+
+            <div id="trainingStatus" class="eccentric-utilisation-ratio-text-box">
+                {{ eccentric_utilisation_ratio_text }}
+            </div>
+
+            
+            
+
+            </div>
+            </div>
+            
+    </div>
+    {% endif %}
+    {% if counter_movement_squat_jump_power != 1 and isosquat_peak_force != 1 %}
+    <div class="page extended-page">
+        <div class="content report-header">
+            <img src="{{ page_six_uri }}" class="page6-class" alt="Footer Image">
+            <img src="{{ page_six_two_uri }}" class="page6_2-class" alt="Footer Image">
+            <img src="{{ data_uri }}" class="page-footer-image" alt="Footer Image">
+
+
+            <img src="{{ ispf_plot_uri }}" class="ispf-plot-image" alt="ispf-plot-image">
+            <img src="{{ isrpf_plot_uri }}" class="isrpf-plot-image" alt="isrpf-plot-image">
+            <img src="{{ power_plot_uri }}" class="power-plot-image" alt="power-plot-image">
+
+            <div id="trainingStatus" class="counter-movement-squat-jump-power-text-box">
+                {{ counter_movement_squat_jump_power }}
+            </div>
+
+            <div id="trainingStatus" class="isosquat-peak-force-text-box">
+                {{ isosquat_peak_force }}
+            </div>
+
+            <div id="maturationBox" class="power-ratio-color-box {{ power_ratio_class }}">
+                <span id="maturationValue">{{ power_ratio }}</span>
+            </div>
+
+            <div id="trainingStatus" class="power-ratio-text-box">
+                {{ power_ratio_text }}
+            </div>
+            </div>
+            
+    </div>
+    {% endif %}
+    {% if body_mass_pulled != '1.0%' and limb_asymmetry != '1.0%' %}
+    <div class="page extended-page">
+        <div class="content report-header">
+            <img src="{{ page_seven_uri }}" class="page7-class" alt="Footer Image">
+            <img src="{{ page_seven_two_uri }}" class="page7_2-class" alt="Footer Image">
+            <img src="{{ data_uri }}" class="page-footer-image" alt="Footer Image">
+            <img src="{{ nbpf_plot_uri }}" class="nbpf-plot-image" alt="nbpf-plot-image">
+            <img src="{{ nbrpf_plot_uri }}" class="nbrpf-plot-image" alt="nbrpf-plot-image">
+            <img src="{{ asymmetry_plot_uri }}" class="asymmetry-plot-image" alt="asymmetry-plot-image">
+            <div id="maturationBox" class="body-mass-pulled-color-box {{ body_mass_pulled_class }}">
+                <span id="maturationValue">{{ body_mass_pulled }}</span>
+            </div>
+            <div id="maturationBox" class="limb-asymmetry-color-box {{ limb_asymmetry_class }}">
+                <span id="maturationValue">{{ limb_asymmetry }}</span>
+            </div>
+
+            </div>
+            
+    </div>
+    {% endif %}
+
+
+        
+</body>
+</html>

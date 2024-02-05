@@ -1,0 +1,153 @@
+2024-02-04 22:16:19: starting data generate_report
+2024-02-04 22:16:19: Starting data processing
+2024-02-04 22:16:20: There was an sys._MEIPASS!
+2024-02-04 22:16:20: There was an sys._MEIPASS!
+2024-02-04 22:16:20: There was an sys._MEIPASS!
+2024-02-04 22:16:20: There was an sys._MEIPASS!
+2024-02-04 22:16:20: There was an sys._MEIPASS!
+2024-02-04 22:16:20: There was an sys._MEIPASS!
+2024-02-04 22:16:20: There was an sys._MEIPASS!
+2024-02-04 22:16:20: There was an sys._MEIPASS!
+2024-02-04 22:16:20: There was an sys._MEIPASS!
+2024-02-04 22:16:20: There was an sys._MEIPASS!
+2024-02-04 22:16:20: There was an sys._MEIPASS!
+2024-02-04 22:16:20: There was an sys._MEIPASS!
+2024-02-04 22:16:20: There was an sys._MEIPASS!
+2024-02-04 22:16:20: There was an sys._MEIPASS!
+2024-02-04 22:16:20: There was an sys._MEIPASS!
+2024-02-04 22:16:20: There was an sys._MEIPASS!
+2024-02-04 22:16:20: Makes it to checkpoint 1
+2024-02-04 22:16:20: Makes it to checkpoint 2
+2024-02-04 22:16:23: Makes it to checkpoint 3
+2024-02-04 22:16:23: Makes it to checkpoint 5
+2024-02-04 22:16:23: Makes it to checkpoint 5.9
+2024-02-04 22:16:23: Current working directory: C:\Users\Solomon\Desktop\Athlete_metrics\dist\AthleteDataApplication
+2024-02-04 22:16:23: Directory of files: plots\rsi_plot.png
+2024-02-04 22:16:23: Directory of files: plots\triple_hop_plot.png
+2024-02-04 22:16:23: Directory of files: plots\custom_plot.png
+2024-02-04 22:16:23: Directory of files: plots\sjh_and_cjh_plot.png
+2024-02-04 22:16:23: Directory of files: plots\ispf_plot.png
+2024-02-04 22:16:23: Directory of files: plots\isrpf_plot.png
+2024-02-04 22:16:23: Directory of files: plots\nbpf_plot.png
+2024-02-04 22:16:23: Directory of files: plots\nbrpf_plot.png
+2024-02-04 22:16:23: Directory of files: plots\asymmetry_plot.png
+2024-02-04 22:16:23: There was an .!
+2024-02-04 22:16:23: There was an .!
+2024-02-04 22:16:23: There was an .!
+2024-02-04 22:16:23: There was an .!
+2024-02-04 22:16:23: There was an .!
+2024-02-04 22:16:23: There was an .!
+2024-02-04 22:16:23: There was an .!
+2024-02-04 22:16:23: There was an .!
+2024-02-04 22:16:23: There was an .!
+2024-02-04 22:16:23: There was an .!
+2024-02-04 22:16:23: There was an .!
+2024-02-04 22:16:23: Makes it to checkpoint 6
+2024-02-04 22:16:23: Finished data processing
+2024-02-04 22:16:23: half way for generate_report
+2024-02-04 22:16:23: Finished data generate_report
+2024-02-04 22:16:23: starting data save_pdf
+2024-02-04 22:16:23: half way for save_pdf
+2024-02-04 22:16:26: Finished data save_pdf
+2024-02-04 22:16:38: starting data generate_report
+2024-02-04 22:16:38: Starting data processing
+2024-02-04 22:16:38: There was an sys._MEIPASS!
+2024-02-04 22:16:38: There was an sys._MEIPASS!
+2024-02-04 22:16:38: There was an sys._MEIPASS!
+2024-02-04 22:16:38: There was an sys._MEIPASS!
+2024-02-04 22:16:38: There was an sys._MEIPASS!
+2024-02-04 22:16:38: There was an sys._MEIPASS!
+2024-02-04 22:16:38: There was an sys._MEIPASS!
+2024-02-04 22:16:38: There was an sys._MEIPASS!
+2024-02-04 22:16:38: There was an sys._MEIPASS!
+2024-02-04 22:16:38: There was an sys._MEIPASS!
+2024-02-04 22:16:38: There was an sys._MEIPASS!
+2024-02-04 22:16:38: There was an sys._MEIPASS!
+2024-02-04 22:16:38: There was an sys._MEIPASS!
+2024-02-04 22:16:38: There was an sys._MEIPASS!
+2024-02-04 22:16:38: There was an sys._MEIPASS!
+2024-02-04 22:16:38: There was an sys._MEIPASS!
+2024-02-04 22:16:38: Makes it to checkpoint 1
+2024-02-04 22:16:38: Makes it to checkpoint 2
+2024-02-04 22:16:41: Makes it to checkpoint 3
+2024-02-04 22:16:41: Makes it to checkpoint 5
+2024-02-04 22:16:41: Makes it to checkpoint 5.9
+2024-02-04 22:16:41: Current working directory: C:\Users\Solomon\Desktop\Athlete_metrics\dist\AthleteDataApplication
+2024-02-04 22:16:41: Directory of files: plots\rsi_plot.png
+2024-02-04 22:16:41: Directory of files: plots\triple_hop_plot.png
+2024-02-04 22:16:41: Directory of files: plots\custom_plot.png
+2024-02-04 22:16:41: Directory of files: plots\sjh_and_cjh_plot.png
+2024-02-04 22:16:41: Directory of files: plots\ispf_plot.png
+2024-02-04 22:16:41: Directory of files: plots\isrpf_plot.png
+2024-02-04 22:16:41: Directory of files: plots\nbpf_plot.png
+2024-02-04 22:16:41: Directory of files: plots\nbrpf_plot.png
+2024-02-04 22:16:41: Directory of files: plots\asymmetry_plot.png
+2024-02-04 22:16:41: There was an .!
+2024-02-04 22:16:41: There was an .!
+2024-02-04 22:16:41: There was an .!
+2024-02-04 22:16:41: There was an .!
+2024-02-04 22:16:41: There was an .!
+2024-02-04 22:16:41: There was an .!
+2024-02-04 22:16:41: There was an .!
+2024-02-04 22:16:41: There was an .!
+2024-02-04 22:16:41: There was an .!
+2024-02-04 22:16:41: There was an .!
+2024-02-04 22:16:41: There was an .!
+2024-02-04 22:16:41: Makes it to checkpoint 6
+2024-02-04 22:16:41: Finished data processing
+2024-02-04 22:16:41: half way for generate_report
+2024-02-04 22:16:41: Finished data generate_report
+2024-02-04 22:16:41: starting data save_pdf
+2024-02-04 22:16:41: half way for save_pdf
+2024-02-04 22:16:44: Finished data save_pdf
+2024-02-05 00:52:40: starting data generate_report
+2024-02-05 00:52:40: Starting data processing
+2024-02-05 00:52:40: There was an sys._MEIPASS!
+2024-02-05 00:52:40: There was an sys._MEIPASS!
+2024-02-05 00:52:40: There was an sys._MEIPASS!
+2024-02-05 00:52:40: There was an sys._MEIPASS!
+2024-02-05 00:52:40: There was an sys._MEIPASS!
+2024-02-05 00:52:40: There was an sys._MEIPASS!
+2024-02-05 00:52:40: There was an sys._MEIPASS!
+2024-02-05 00:52:40: There was an sys._MEIPASS!
+2024-02-05 00:52:40: There was an sys._MEIPASS!
+2024-02-05 00:52:40: There was an sys._MEIPASS!
+2024-02-05 00:52:40: There was an sys._MEIPASS!
+2024-02-05 00:52:40: There was an sys._MEIPASS!
+2024-02-05 00:52:40: There was an sys._MEIPASS!
+2024-02-05 00:52:40: There was an sys._MEIPASS!
+2024-02-05 00:52:40: There was an sys._MEIPASS!
+2024-02-05 00:52:40: There was an sys._MEIPASS!
+2024-02-05 00:52:40: Makes it to checkpoint 1
+2024-02-05 00:52:40: Makes it to checkpoint 2
+2024-02-05 00:52:41: Makes it to checkpoint 3
+2024-02-05 00:52:41: Makes it to checkpoint 5
+2024-02-05 00:52:41: Makes it to checkpoint 5.9
+2024-02-05 00:52:41: Current working directory: C:\Users\Solomon\Desktop\AthleteDataApp\dist\AthleteDataApplication
+2024-02-05 00:52:41: Directory of files: None
+2024-02-05 00:52:41: Directory of files: plots\triple_hop_plot.png
+2024-02-05 00:52:41: Directory of files: None
+2024-02-05 00:52:41: Directory of files: None
+2024-02-05 00:52:41: Directory of files: None
+2024-02-05 00:52:41: Directory of files: None
+2024-02-05 00:52:41: Directory of files: plots\nbpf_plot.png
+2024-02-05 00:52:41: Directory of files: plots\nbrpf_plot.png
+2024-02-05 00:52:41: Directory of files: plots\asymmetry_plot.png
+2024-02-05 00:52:41: Plot path invalid or not found.
+2024-02-05 00:52:41: There was an .!
+2024-02-05 00:52:41: Plot path invalid or not found.
+2024-02-05 00:52:41: Plot path invalid or not found.
+2024-02-05 00:52:41: Plot path invalid or not found.
+2024-02-05 00:52:41: Plot path invalid or not found.
+2024-02-05 00:52:41: Plot path invalid or not found.
+2024-02-05 00:52:41: Plot path invalid or not found.
+2024-02-05 00:52:41: There was an .!
+2024-02-05 00:52:41: There was an .!
+2024-02-05 00:52:41: There was an .!
+2024-02-05 00:52:41: Makes it to checkpoint 6
+2024-02-05 00:52:41: Finished data processing
+2024-02-05 00:52:41: half way for generate_report
+2024-02-05 00:52:41: Finished data generate_report
+2024-02-05 00:52:41: starting data save_pdf
+2024-02-05 00:52:41: half way for save_pdf
+2024-02-05 00:52:44: Finished data save_pdf
